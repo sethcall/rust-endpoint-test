@@ -68,7 +68,7 @@ $Arch = $env:PROCESSOR_ARCHITECTURE
 switch ($Arch) {
     "AMD64" { $RustTriple = "x86_64-pc-windows-msvc";  $BazeliskAsset = "bazelisk-windows-amd64.exe"; $VcComponent = "Microsoft.VisualStudio.Component.VC.Tools.x86.x64" }
     "ARM64" { $RustTriple = "aarch64-pc-windows-msvc"; $BazeliskAsset = "bazelisk-windows-arm64.exe"; $VcComponent = "Microsoft.VisualStudio.Component.VC.Tools.ARM64" }
-    default { Write-Host "Unsupported architecture: $Arch"; return }
+    default { Write-Host "Unsupported architecture: $Arch"; Stop-Transcript | Out-Null; return }
 }
 
 $Os = Get-CimInstance Win32_OperatingSystem
