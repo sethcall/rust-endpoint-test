@@ -1,0 +1,6 @@
+[package]
+name = "rust-endpoint-test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]

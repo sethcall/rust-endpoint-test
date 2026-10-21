@@ -1,0 +1,12 @@
+load("@rules_rust//rust:defs.bzl", "rust_binary", "rust_test")
+
+rust_binary(
+    name = "hello",
+    srcs = ["src/main.rs"],
+    rustc_env = {"BUILT_WITH": "Bazel rules_rust"},
+)
+
+rust_test(
+    name = "hello_test",
+    crate = ":hello",
+)
